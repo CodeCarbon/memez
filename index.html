@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme</title>
+</head>
+
+<body>
+
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+    <main>
+        <h1>MEME</h1>
+        <form method="post">
+            <input type="text" name="webhook" placeholder="Enter webhook" />
+            <input type="submit" />
+
+            <br>
+            <ul style="list-style-type: none;">
+                <li> <label>Normal Meme</label> <input type="radio" name="type" value="memes" checked /></li>
+                <li> <label>Dank Meme&lt;dark&gt;</label> <input type="radio" name="type" value="dankmeme" /></li>
+                <li> <label>Programming Meme</label> <input type="radio" name="type" value="ProgrammerHumor" /></li>
+            </ul>
+        </form>
+    </main>
+</body>
+
+</html>
