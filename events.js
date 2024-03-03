@@ -1,4 +1,4 @@
-const webhook = require("./schema/webhook");
+const webhook = require("./webhook");
 const { getMeme, sendMeme } = require("./meme");
 const types = ["meme", "dankmeme", "ProgrammerHumor"];
 
