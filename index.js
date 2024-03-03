@@ -1,19 +1,21 @@
 const express = require("express");
-const db = require("./schema/connect");
-const webhook = require("./schema/webhook");
+const { connect } = require("mongoose")
+const webhook = require("./webhook");
 const { Fire, Test } = require("./events");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 
-db.then(() => console.log("Connected to MongoDB " + new Date().toLocaleDateString())).catch(console.error);
+connect(process.env.MONGO_URI, {
+    dbName: "Meme",
+}).then(() => console.log("Connected to MongoDB " + new Date().toLocaleDateString())).catch(console.error);
+
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/", async (req, res) => {
-
     const _webhook = req.body.webhook;
     const _type = req.body.type;
     if (!_webhook || !_type) return res.json({ error: true });
