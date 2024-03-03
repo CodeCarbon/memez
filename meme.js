@@ -1,5 +1,5 @@
 const axios = require('axios').default;
-const webhook = require("./schema/webhook")
+const webhook = require("./webhook")
 async function getMeme(_type) {
     return new Promise((resolve, reject) => {
         axios(`https://www.reddit.com/r/${_type}/top/.json`)
